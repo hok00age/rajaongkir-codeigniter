@@ -18,13 +18,13 @@ class RajaOngkir {
             log_message('error', 'cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.');
         }
         $this->_ci = & get_instance();
-        $this->_ci->load->config('rajaongkir');
+        $this->_ci->load->config('rajaongkir', TRUE);
         // Pastikan Anda sudah memasukkan API Key di application/config/rajaongkir.php
-        if ($this->_ci->config->item('api_key') == "") {
+        if ($this->_ci->config->item('api_key', 'rajaongkir') == "") {
             log_message("error", "Harap masukkan API KEY Anda di config.");
         } else {
-            $this->api_key = $this->_ci->config->item('api_key');
-            $this->base_url = $this->_ci->config->item('base_url');
+            $this->api_key = $this->_ci->config->item('api_key', 'rajaongkir');
+            $this->base_url = $this->_ci->config->item('api_base_url', 'rajaongkir');
         }
     }
 
