@@ -12,13 +12,13 @@ $this->load->library('rajaongkir');
 ### Melakukan request
 ```php
 //Mendapatkan semua propinsi
-$provinces = $this->rajaongkir->getProvince();
+$provinces = $this->rajaongkir->province();
 
 //Mendapatkan semua kota
-$cities = $this->rajaongkir->getCity();
+$cities = $this->rajaongkir->city();
 
 //Mendapatkan data ongkos kirim
-$cost = $this->rajaongkir->getCost(501, 114, 1000, "jne");
+$cost = $this->rajaongkir->cost(501, 114, 1000, "jne");
 ```
 ### Response
 Response yang dihasilkan berupa string JSON balasan dari RajaOngkir.
