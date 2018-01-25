@@ -14,4 +14,4 @@ $config['rajaongkir_api_key'] = "";
  * http://rajaongkir.com/dokumentasi#akun-ringkasan
  * 
  */
-$config['rajaongkir_account_type'] = "basic";
+$config['rajaongkir_account_type'] = "starter";
