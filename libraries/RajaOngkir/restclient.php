@@ -16,7 +16,7 @@ class RESTClient {
         $this->api_key = $api_key;
         $this->endpoint = $endpoint;
         $this->account_type = $account_type;
-        $this->api_url = "http://rajaongkir.com/api/";
+        $this->api_url = "http://api.rajaongkir.com/";
     }
 
     /**
