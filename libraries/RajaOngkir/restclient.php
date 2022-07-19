@@ -5,18 +5,20 @@
  * 
  * @author Damar Riyadi <damar@tahutek.net>
  */
-class RESTClient {
+class RESTClient
+{
 
     private $endpoint;
     private $account_type;
     private $api_key;
     private $api_url;
 
-    public function __construct($api_key, $endpoint, $account_type) {
+    public function __construct($api_key, $endpoint, $account_type)
+    {
         $this->api_key = $api_key;
         $this->endpoint = $endpoint;
         $this->account_type = $account_type;
-        $this->api_url = "http://rajaongkir.com/api/";
+        $this->api_url = "https://api.rajaongkir.com/";
     }
 
     /**
@@ -25,7 +27,8 @@ class RESTClient {
      * @param array Parameter yang dikirimkan
      * @return string Response dari cURL
      */
-    function post($params) {
+    function post($params)
+    {
         $curl = curl_init();
         $header[] = "Content-Type: application/x-www-form-urlencoded";
         $header[] = "key: $this->api_key";
@@ -48,7 +51,8 @@ class RESTClient {
      * @param array Parameter yang dikirimkan
      * @return string Response dari cURL
      */
-    function get($params) {
+    function get($params)
+    {
         $curl = curl_init();
         $header[] = "key: $this->api_key";
         $query = http_build_query($params);
@@ -61,5 +65,4 @@ class RESTClient {
         curl_close($curl);
         return $return;
     }
-
 }
